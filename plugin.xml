@@ -10,6 +10,8 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     <repo>https://github.com/chemerisuk/cordova-plugin-firebase-messaging</repo>
     <issue>https://github.com/chemerisuk/cordova-plugin-firebase-messaging/issues</issue>
 
+    <dependency id="cordova-plugin-cocoapod-support" url="https://github.com/snuffy/cordova-plugin-cocoapods-support" />  
+
     <js-module src="www/FirebaseMessaging.js" name="FirebaseMessaging">
         <merges target="cordova.plugins.firebase.messaging" />
     </js-module>
@@ -44,16 +46,9 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <source-file src="src/ios/AppDelegate+FirebaseMessagingPlugin.m" />
         <header-file src="src/ios/FirebaseMessagingPlugin.h" />
         <source-file src="src/ios/FirebaseMessagingPlugin.m" />
-
-        <podspec>
-            <config>
-                <source url="https://github.com/CocoaPods/Specs.git"/>
-            </config>
-            <pods>
-                <pod name="Firebase/Core" spec="~> 6.0.0" />
-                <pod name="Firebase/Messaging" spec="~> 6.0.0" />
-            </pods>
-        </podspec>
+        <pods-config use-frameworks="true" />
+        <pod name="Firebase/Core" spec="~> 6.0.0" />
+        <pod name="Firebase/Messaging" spec="~> 6.0.0" />
     </platform>
 
     <platform name="android">
